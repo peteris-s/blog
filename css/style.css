@@ -1,27 +1,68 @@
+/* Reset margin and padding for the body */
 body {
   margin: 0;
+  font-family: Arial, sans-serif; /* Default font for readability */
 }
 
-ul,
-p {
-  color: green;
-}
-
-ul {
-  list-style: symbols(cyclic "\1F347");
-}
-
-header {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-header ul {
-  display: flex;
-  gap: 20px;
+/* Remove default margin and padding for ul and p */
+ul, p {
   margin: 0;
+  padding: 0;
 }
 
-header ul li {
-  list-style-type: none;
-  padding: 7px 10px;
+/* Remove default list styling */
+ul {
+  list-style: none;
 }
+
+/* Header styling */
+header {
+  background-color: #333; /* Dark background for contrast */
+  color: white; /* Text color */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* Subtle border at the bottom */
+  padding: 10px 0; /* Padding inside the header */
+}
+
+/* Navbar layout */
+header nav ul {
+  display: flex; /* Flexbox for horizontal layout */
+  gap: 20px; /* Space between items */
+  margin: 0;
+  justify-content: center; /* Center the items horizontally */
+}
+
+/* Style for list items in the navbar */
+header nav ul li {
+  list-style-type: none; /* Remove bullets from list items */
+}
+
+/* Anchor tag styling (links inside the navbar) */
+header nav ul li a {
+  text-decoration: none; /* Remove underline */
+  color: white; /* Link color */
+  font-size: 16px; /* Set a reasonable font size */
+  font-weight: 600; /* Bold links for emphasis */
+  padding: 7px 15px; /* Padding around the link text */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition effect */
+  border-radius: 4px; /* Rounded corners on hover */
+}
+
+/* Hover effect for anchor links */
+header nav ul li a:hover {
+  background-color: #575757; /* Darken the background on hover */
+  color: #f1f1f1; /* Lighten the text on hover */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  header nav ul {
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: center; /* Center items */
+  }
+
+  header nav ul li a {
+    padding: 10px 20px; /* Increase padding for better spacing */
+    font-size: 18px; /* Larger text size for readability */
+  }
+}
+
